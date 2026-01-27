@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@theme inline {
+  --font-pop: var(--font-poppins);
+  --font-mono: var(--font-montserrat);
+}
