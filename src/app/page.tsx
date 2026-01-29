@@ -1,6 +1,9 @@
+import Hero from "../components/hero";
 
 export default function Home() {
   return (
-    <h1 className="font-mono">Hello</h1>
+    <>
+      <Hero />
+    </>
   );
 }

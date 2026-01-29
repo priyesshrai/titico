@@ -8,7 +8,7 @@ type Props = ComponentProps<"section"> & {
 export default function Section({ children, className, ...rest }: Props) {
     return (
         <section
-            className={cn("w-full", className)}
+            className={cn("w-full px-6", className)}
             {...rest}
         >
             {children}

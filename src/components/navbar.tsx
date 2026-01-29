@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import Button from "./ui/button";
+import Button from "./ui/buttons";
 import { MoveUpRight, PhoneCallIcon } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
