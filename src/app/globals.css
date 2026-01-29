@@ -3,4 +3,7 @@
 @theme inline {
   --font-pop: var(--font-poppins);
   --font-mono: var(--font-montserrat);
+  --color-dark: #282828;
+  --color-sub: #6e6e6e;
+  --color-cont: #5b5b5b;
 }
