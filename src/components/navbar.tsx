@@ -122,7 +122,7 @@ export default function Navbar() {
                 animate={{
                     backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
                     backgroundColor: scrolled
-                        ? "rgba(248, 250, 252, 0.6)"
+                        ? "rgba(248, 250, 252, 0.2)"
                         : "rgba(248, 250, 252, 0)",
                 }}
                 transition={{
