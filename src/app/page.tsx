@@ -5,6 +5,7 @@ import Collections from "../components/collections";
 import Hero from "../components/hero";
 import ImageSlider from "../components/image_slider";
 import Sponsor from "../components/sponsor";
+import WhyUs from "../components/why_us";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ImageSlider />
       <AdditionalDetails />
       <Ads />
+      <WhyUs />
     </>
   );
 }
