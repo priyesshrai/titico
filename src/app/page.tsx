@@ -1,3 +1,4 @@
+import AdditionalDetails from "../components/additional_details";
 import CardSlider from "../components/card_slider";
 import Collections from "../components/collections";
 import Hero from "../components/hero";
@@ -12,6 +13,7 @@ export default function Home() {
       <Sponsor />
       <Collections />
       <ImageSlider />
+      <AdditionalDetails />
     </>
   );
 }
