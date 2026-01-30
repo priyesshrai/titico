@@ -65,7 +65,7 @@ export default function CardSlider() {
             rating: 4,
         },
     ]
-    const OPTIONS: EmblaOptionsType = { align: 'start', dragFree: true }
+    const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: true }
     return (
         <Section className='p-0'>
             <Wrapper className='max-w-full'>
