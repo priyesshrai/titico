@@ -13,6 +13,7 @@ import {
 } from "@/src/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay";
 import Button from './ui/buttons';
+import Image from 'next/image';
 
 interface Banner {
     src: string;
@@ -26,6 +27,7 @@ export default function Hero() {
     const [api, setApi] = useState<CarouselApi>()
     const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }))
     const [activeIndex, setActiveIndex] = useState(0);
+
 
     useEffect(() => {
         if (!api) return;
@@ -62,12 +64,44 @@ export default function Hero() {
             content: "Serving fashion brands, wholesalers, and manufacturers across 20+ countries",
         },
     ]
-
+    const activeBanner = banner[activeIndex];
     return (
         <Section>
             <Wrapper className='lg:py-6 md:py-6 sm:py-6 py-6'>
-                <div className='w-full relative'>
-                    <Carousel className="w-full z-10"
+                <div className='w-full relative grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-10'>
+                    <div className='w-full h-full md:order-1 order-2'>
+                        <motion.div
+                            key={activeIndex}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{
+                                once: false,
+                                amount: 0.4,
+                            }}
+                            transition={{
+                                duration: 0.6,
+                                ease: [0.22, 1, 0.36, 1],
+                                delay: 0.2
+                            }}
+                            className='w-full pr-10 flex flex-col justify-center h-full'>
+                            <span className='block lg:text-4xl md:text-3xl sm:text-2xl text-xl font-mono text-dark font-bold leading-tight max-w-sm'>
+                                {activeBanner.title}
+                            </span>
+                            <span className='block mt-3 text-[#202020] font-normal font-pop md:text-lg sm:text-base text-sm leading-tight max-w-sm'>
+                                {activeBanner.content}
+                            </span>
+                            <div className='md:mt-9 mt-4 flex max-[460px]:flex-col max-[460px]:items-start flex-row items-center gap-4 md:pb-0 pb-5'>
+                                <Button>
+                                    Explore Our Collections
+                                </Button>
+                                <Button variant='outline' className='hover:bg-transparent'>
+                                    Request a Quote
+                                </Button>
+                            </div>
+                        </motion.div>
+                    </div>
+                    <Carousel className="w-full z-10 md:order-2 order-1"
                         plugins={[plugin.current]}
                         opts={{
                             loop: true,
@@ -80,43 +114,13 @@ export default function Hero() {
                             {
                                 banner.map((data, key) => (
                                     <CarouselItem key={key} className='relative'>
-                                        <picture>
-                                            <source media="(max-width: 768px)" srcSet={data.src} />
-                                            <img src={data.src} alt="Banner" className="w-full h-auto" />
-                                        </picture>
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 40 }}
-                                            animate={
-                                                activeIndex === key
-                                                    ? { opacity: 1, y: 0 }
-                                                    : { opacity: 0, y: 40 }
-                                            }
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{
-                                                once: false,
-                                                amount: 0.4,
-                                            }}
-                                            transition={{
-                                                duration: 0.6,
-                                                ease: [0.22, 1, 0.36, 1],
-                                                delay: 0.2
-                                            }}
-                                            className='md:absolute md:left-14 md:top-1/2 md:-translate-y-1/2 w-full max-w-lg bg-gray-100/20 backdrop-blur-xs md:p-5 rounded-xl md:mt-0 mt-5'>
-                                            <span className='block lg:text-4xl md:text-3xl sm:text-2xl text-xl font-mono text-dark font-bold leading-tight'>
-                                                {data.title}
-                                            </span>
-                                            <span className='block mt-3 text-[#202020] font-normal font-pop md:text-lg sm:text-base text-sm leading-tight'>
-                                                {data.content}
-                                            </span>
-                                            <div className='md:mt-9 mt-4 flex max-[460px]:flex-col max-[460px]:items-start flex-row items-center gap-4 md:pb-0 pb-5'>
-                                                <Button>
-                                                    Explore Our Collections
-                                                </Button>
-                                                <Button variant='outline' className='hover:bg-transparent'>
-                                                    Request a Quote
-                                                </Button>
-                                            </div>
-                                        </motion.div>
+                                        <Image
+                                            src={data.src}
+                                            alt="Banner"
+                                            className="w-full h-110 object-cover rounded-xl"
+                                            width={1080}
+                                            height={500}
+                                        />
                                     </CarouselItem>
                                 ))
                             }
