@@ -14,7 +14,7 @@ import WhyUs from "../components/why_us";
 
 export default function Home() {
   return (
-    <>
+    <main className="relative z-20">
       <Hero />
       <CardSlider />
       <Sponsor />
@@ -28,6 +28,6 @@ export default function Home() {
       <Certificate />
       <Testimonials />
       <ContactBanner />
-    </>
+    </main>
   );
 }
