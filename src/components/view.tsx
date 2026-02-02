@@ -18,7 +18,7 @@ export default function View() {
                     </SubHeading>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
                     <div className="relative">
                         <Image
                             src="/images/banner/old.png"
@@ -51,7 +51,7 @@ export default function View() {
                         </div>
                     </div>
 
-                    <div className="relative md:mt-12">
+                    <div className="relative">
                         <Image
                             src="/images/banner/now.png"
                             alt="Modern textile production"

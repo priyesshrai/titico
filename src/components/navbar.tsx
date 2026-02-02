@@ -254,14 +254,16 @@ export default function Navbar() {
                                 key={items.label}
                                 onClick={handleMenuToggle}
                             >
-                                <span
-                                    className={`relative z-10 px-4 py-2 rounded-md w-full flex items-center justify-between ${isActive ? "text-white bg-dark" : "text-gray-600 hover:bg-gray-50"
-                                        }`}
-                                >
-                                    {items.label}
-                                    <em className="text-[10px] leading-tight">
-                                        {items.description}
-                                    </em>
+                                <div className={`relative z-10 px-4 py-2 rounded-md w-full flex items-center justify-between ${isActive ? "text-white bg-dark" : "text-gray-600 hover:bg-gray-50"
+                                    }`}>
+                                    <div className="flex flex-col">
+                                        <span>
+                                            {items.label}
+                                        </span>
+                                        <span className="text-[10px] leading-tight font-pop">
+                                            {items.description}
+                                        </span>
+                                    </div>
                                     <MoveUpRight size={16} />
                                     {isActive && (
                                         <span
@@ -271,7 +273,7 @@ export default function Navbar() {
                                             }}
                                         />
                                     )}
-                                </span>
+                                </div >
                             </Link>
                         );
                     })}
