@@ -21,7 +21,7 @@ export default function Home() {
       <CardSlider />
       {/* <Sponsor /> */}
       <Collections />
-      <ImageSlider />
+      {/* <ImageSlider /> */}
       <AdditionalDetails />
       <Ads />
       <WhyUs />
