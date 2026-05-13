@@ -1,103 +1,99 @@
 "use client";
-import Section from './ui/section'
-import Wrapper from './ui/wrapper'
-import Image from 'next/image'
-import { motion } from "motion/react"
-import Button from './ui/buttons';
-import { MoveUpRight } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import Section from "./ui/section";
+import Wrapper from "./ui/wrapper";
+
+const ads = [
+    {
+        eyebrow: "Limited offer · Ends soon",
+        title: "Flat 30% off signature fabrics",
+        desc: "Our most loved textures and patterns — available at special seasonal prices while stock lasts.",
+        image: "/images/ads/img-1.png",
+        bg: "#2e2010",
+        flip: false,
+    },
+    {
+        eyebrow: "New arrivals · Season 2026",
+        title: "Fresh weaves, modern finishes",
+        desc: "Designed for today's global fashion trends — contemporary patterns built on traditional craft.",
+        image: "/images/ads/img-2.png",
+        bg: "#1a1208",
+        flip: true,
+    },
+    {
+        eyebrow: "Premium range · Export grade",
+        title: "Premium fabric collection",
+        desc: "Handpicked materials crafted for durability, comfort, and long-lasting beauty — built for international buyers.",
+        image: "/images/ads/img-3.png",
+        bg: "#0d1a15",
+        flip: false,
+    },
+];
 
 export default function Ads() {
     return (
-        <Section>
+        <Section className="bg-cream">
             <Wrapper>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                    <motion.div
-                        initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-                        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                        viewport={{ once: true }}
-                        className='relative w-full h-full overflow-hidden rounded-xl'>
-                        <Image
-                            src={"/images/ads/img-1.png"}
-                            width={800}
-                            height={500}
-                            alt='Product Ads'
-                            className='w-full h-full object-cover'
-                        />
-                        <div className='absolute z-10 top-0 left-0 w-full md:p-5 p-3 flex flex-col gap-2.5'>
-                            <span className='font-mono text-base lg:text-2xl md:text-lg text-white font-semibold'>
-                                Flat 30% Off on Signature Fabrics
-                            </span>
-                            <span className='max-w-sm text-white font-pop leading-tight'>
-                                Discover our most loved textures and patterns, now available at special seasonal prices.
-                            </span>
-                            <Button className='w-max flex gap-2 items-center'>
-                                Shop Now
-                                <MoveUpRight size={16} />
-                            </Button>
-                        </div>
-                        <div className='absolute inset-0 bg-black/40 '  />
-                    </motion.div>
-
-                    <div className='w-full h-full flex flex-col gap-6'>
-                        <motion.div
-                            initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-                            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.3 }}
-                            viewport={{ once: true }}
-                            className='relative w-full overflow-hidden rounded-xl'>
-                            <Image
-                                src={"/images/ads/img-2.png"}
-                                width={800}
-                                height={500}
-                                alt='Product Ads'
-                                className='w-full md:h-56 h-80 object-cover'
-                            />
-                            <div className='absolute z-20 top-0 left-0 w-full md:p-5 p-3 flex flex-col gap-2.5'>
-                                <span className='font-mono text-base lg:text-2xl md:text-lg text-white font-semibold'>
-                                    New Arrivals
-                                </span>
-                                <span className='max-w-sm text-white font-pop leading-tight'>
-                                    Fresh weaves and modern finishes designed for today&apos;s global fashion trends.
-                                </span>
-                                <Button className='w-max flex gap-2 items-center'>
-                                    Shop Now
-                                    <MoveUpRight size={16} />
-                                </Button>
-                            </div>
-                            <div className='absolute inset-0 bg-black/40 '  />
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-                            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.5 }}
-                            viewport={{ once: true }}
-                            className='w-full overflow-hidden rounded-xl'>
-                            <Image
-                                src={"/images/ads/img-3.png"}
-                                width={800}
-                                height={500}
-                                alt='Product Ads'
-                                className='relative w-full md:h-56 h-80 object-cover'
-                            />
-                            <div className='absolute z-10 top-0 left-0 w-full md:p-5 p-3 flex flex-col gap-2.5'>
-                                <span className='font-mono text-base lg:text-2xl md:text-lg text-white font-semibold'>
-                                    Premium Fabric Collection
-                                </span>
-                                <span className='max-w-sm text-white font-pop leading-tight'>
-                                    Handpicked materials crafted for durability, comfort, and long-lasting beauty.
-                                </span>
-                                <Button className='w-max flex gap-2 items-center'>
-                                    Shop Now
-                                    <MoveUpRight size={16} />
-                                </Button>
-                            </div>
-                            <div className='absolute inset-0 bg-black/40 '  />
-                        </motion.div>
+                <div>
+                    <div className="flex items-center gap-3 mb-2">
+                        <div className="w-6 h-px bg-gold" />
+                        <span className="font-mono text-[10px] font-bold tracking-[.16em] uppercase text-gold">
+                            Current offers
+                        </span>
                     </div>
+                    <h2 className="font-play text-3xl lg:text-4xl font-medium text-dark">
+                        Deals worth <em className="italic text-gold">exploring</em>
+                    </h2>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                    {ads.map((ad, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.35, delay: idx * 0.1 }}
+                            viewport={{ once: true }}
+                            className={`grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden min-h-55 ${ad.flip ? "md:[direction:rtl]" : ""}`}
+                        >
+                            {/* Image col */}
+                            <div className={`relative min-h-50 ${ad.flip ? "md:[direction:ltr]" : ""}`}>
+                                <Image
+                                    src={ad.image}
+                                    fill
+                                    alt={ad.title}
+                                    className="object-cover object-center"
+                                />
+                            </div>
+
+                            {/* Body col */}
+                            <div
+                                className={`flex flex-col justify-center gap-4 p-8 lg:p-10 ${ad.flip ? "md:[direction:ltr]" : ""}`}
+                                style={{ background: ad.bg }}
+                            >
+                                <span className="font-mono text-[9px] font-bold tracking-[.14em] uppercase text-gold">
+                                    ↘ {ad.eyebrow}
+                                </span>
+                                <h3 className="font-play text-white text-xl lg:text-2xl font-medium leading-snug">
+                                    {ad.title}
+                                </h3>
+                                <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+                                    {ad.desc}
+                                </p>
+                                <Link
+                                    href="/#"
+                                    className="inline-flex items-center gap-2 w-fit font-mono text-[10px] font-bold tracking-[.12em] uppercase text-dark bg-gold px-5 py-2.5 rounded-md hover:opacity-85 transition-opacity duration-200 mt-1"
+                                >
+                                    Shop now <ArrowRight size={12} />
+                                </Link>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </Wrapper>
         </Section>
-    )
+    );
 }

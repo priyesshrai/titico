@@ -1,82 +1,67 @@
-import React from 'react'
-import Section from './ui/section';
-import Wrapper from './ui/wrapper';
-import { Content, Heading, SubHeading } from './ui/headings';
-import AnimatedDiv from './ui/motion_div';
-import Image from 'next/image';
+import { data } from "../constant/why_us";
+import Section from "./ui/section";
+import Wrapper from "./ui/wrapper";
 
-interface Data {
-    label: string;
-    content: string;
-    icon: string;
-}
 
 export default function WhyUs() {
-    const data: Data[] = [
-        {
-            label: "In-House Manufacturing",
-            content: "Full control from yarn sourcing to fabric finishing, ensuring consistency, speed, and quality at every stage.",
-            icon: "/images/icons/why-icon-1.svg"
-        },
-        {
-            label: "Strict Quality Control",
-            content: "Every production batch is tested for strength, color fastness, and performance before it leaves our facility.",
-            icon: "/images/icons/why-icon-2.svg"
-        },
-        {
-            label: "Custom Development",
-            content: "We match your exact shade, texture, GSM, and finish to meet your brand or market requirements.",
-            icon: "/images/icons/why-icon-3.svg"
-        },
-        {
-            label: "Global Shipping",
-            content: "Trusted logistics partners help us deliver fabrics safely and on time to buyers in over 20 countries worldwide.",
-            icon: "/images/icons/why-icon-4.svg"
-        },
-        {
-            label: "Compliance Ready",
-            content: "Our fabrics are supported by OEKO-TEX, ISO, and REACH standards, making them ready for international markets.",
-            icon: "/images/icons/why-icon-5.svg"
-        },
-        {
-            label: "Reliable Lead Times",
-            content: "We follow strict production schedules and export timelines, so you can plan your collections with confidence and zero delays.",
-            icon: "/images/icons/why-icon-6.svg"
-        },
-    ]
     return (
-        <Section>
+        <Section className="bg-white">
             <Wrapper>
-                <div className='w-full flex flex-col gap-2 lg:gap-4 md:gap-3 items-center'>
-                    <Heading>
-                        Why Global Buyers Choose Us
-                    </Heading>
+                <div className="flex items-start justify-between gap-8 flex-wrap">
+                    <div>
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-6 h-px bg-gold" />
+                            <span className="font-mono text-[10px] font-bold tracking-[.16em] uppercase text-gold">
+                                Why choose us
+                            </span>
+                        </div>
+                        <h2 className="font-play text-3xl lg:text-4xl font-medium text-dark leading-snug">
+                            What makes us the<br /> <em className="italic text-gold">right partner</em>
+                        </h2>
+                    </div>
+                    <p className="text-sub text-sm leading-relaxed max-w-sm">
+                        Every claim below is backed by a process, a certification, or a
+                        production number — not just a promise.
+                    </p>
                 </div>
-                <div className='w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-2'>
-                    {
-                        data.map((item, idx) => (
-                            <AnimatedDiv
-                                className='p-4 relative w-full h-full flex flex-col lg:gap-8 md:gap-6 gap-4'
-                                idx={idx}
-                                key={item.label}
+
+                <div className="flex flex-col">
+                    {data.map((item, idx) => {
+                        const Icon = item.icon;
+                        const isLast = idx === data.length - 1;
+                        return (
+                            <div
+                                key={idx}
+                                className={`group grid items-center gap-6 py-6 ${!isLast ? "border-b border-gold/12" : ""}
+                                 border-t border-gold/12 first:border-t`
+                                }
+                                style={{ gridTemplateColumns: "48px 1fr auto" }}
                             >
-                                <div>
-                                    <Image src={item.icon} alt={item.label} width={64} height={64} className=' md:w-16 w-10 h-auto' />
+                                <div className="w-12 h-12 rounded-xl border border-gold/25 bg-gold/7 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:bg-gold group-hover:border-gold">
+                                    <Icon
+                                        size={20}
+                                        className="text-gold transition-colors duration-200 group-hover:text-white"
+                                        strokeWidth={1.75}
+                                    />
                                 </div>
-                                <div className='flex flex-col gap-2'>
-                                    <span className='font-mono text-base lg:text-2xl md:text-lg text-dark font-medium'>
+
+                                <div className="flex flex-col gap-1">
+                                    <span className="font-play text-dark text-[1.05rem] font-medium">
                                         {item.label}
                                     </span>
-                                    <p className='text-sm text-sub max-w-xs w-full '>
+                                    <p className="text-sub text-sm leading-relaxed max-w-lg">
                                         {item.content}
                                     </p>
                                 </div>
-                                <div className='absolute h-full w-px right-px bg-linear-to-b from-transparent via-[#29A9D8] to-transparent ' />
-                            </AnimatedDiv>
-                        ))
-                    }
+
+                                <span className="font-mono text-xs font-bold text-gold/60 tracking-wider hidden sm:block">
+                                    {item.num}
+                                </span>
+                            </div>
+                        );
+                    })}
                 </div>
             </Wrapper>
         </Section>
-    )
+    );
 }
