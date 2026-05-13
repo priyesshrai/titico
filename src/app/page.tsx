@@ -15,9 +15,9 @@ import WhyUs from "../components/why_us";
 
 export default function Home() {
   return (
-    <main className="relative z-20">
+    <main className="z-20">
       <Hero />
-      <View/>
+      <View />
       <CardSlider />
       {/* <Sponsor /> */}
       <Collections />
