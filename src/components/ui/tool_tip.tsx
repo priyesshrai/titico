@@ -59,15 +59,15 @@ export default function ToolTip({ data, className }: Props) {
                     key={items.name}
                     idx={idx}
                     className={cn(
-                        "relative  size-16 rounded-full bg-white p-0.5 cursor-pointer",
+                        "relative size-12 rounded-full bg-white p-0.5 cursor-pointer",
                         idx === 0 ? "ml-0" : "-ml-5.5"
                     )}
                 >
                     <Image
                         src={items.img}
                         alt={items.name}
-                        width={100}
-                        height={100}
+                        width={50}
+                        height={50}
                         onMouseMove={handleMouseMove}
                         className="w-full h-full object-cover object-top rounded-full"
                         onMouseEnter={() => setHoverIndex(idx)}

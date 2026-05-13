@@ -1,131 +1,103 @@
 import Section from './ui/section'
 import Wrapper from './ui/wrapper'
 import { Heading, SubHeading } from './ui/headings'
-import ToolTip, { Data } from './ui/tool_tip'
+import ToolTip from './ui/tool_tip'
 import { EmblaOptionsType } from 'embla-carousel'
 import SliderWrapper from './slider_wrapper'
 import Card from './card'
 import Image from 'next/image'
+import { Quote } from 'lucide-react'
+import { data, testimonials } from '../constant/testimonials'
 
-const OPTIONS: EmblaOptionsType = { align: 'start', }
-
-interface Testimonials {
-    name: string;
-    content: string;
-    img: string;
-    location: string;
+const OPTIONS: EmblaOptionsType = {
+    align: 'start',
+    dragFree: true,
 }
 
 export default function Testimonials() {
-    const data: Data[] = [
-        {
-            name: "asdasd asdasd",
-            img: "/images/testimonials/img-1.png",
-            post: "Marketing Head",
-        },
-        {
-            name: "zxc asdasd",
-            img: "/images/testimonials/img-2.png",
-            post: "Marketing Head",
-        },
-        {
-            name: "fgdf asdasd",
-            img: "/images/testimonials/img-3.png",
-            post: "Marketing Head",
-        },
-        {
-            name: "werer asdasd",
-            img: "/images/testimonials/img-4.png",
-            post: "Marketing Head",
-        },
-        {
-            name: "xcvsdf asdasd",
-            img: "/images/testimonials/img-5.png",
-            post: "Marketing Head",
-        },
-    ]
-    const testimonials: Testimonials[] = [
-        {
-            name: "Ravi Mehta",
-            content:
-                "The fabric quality is consistently excellent. The texture, color retention, and durability meet international standards, making them a reliable partner for our garment exports.",
-            img: "/images/testimonials/img-1.png",
-            location: "Surat, India",
-        },
-        {
-            name: "Ananya Sharma",
-            content:
-                "We’ve sourced cotton and blended fabrics for over two years now. The finishing and weaving precision have significantly improved our final product quality.",
-            img: "/images/testimonials/img-2.png",
-            location: "Jaipur, India",
-        },
-        {
-            name: "Mohammed Khan",
-            content:
-                "Their textile solutions helped us scale production without compromising on fabric strength or consistency. Timely delivery and professional support stand out.",
-            img: "/images/testimonials/img-3.png",
-            location: "Bhiwandi, India",
-        },
-        {
-            name: "Priya Nair",
-            content:
-                "The variety of fabrics and customization options are impressive. From sampling to bulk orders, the experience has been smooth and dependable.",
-            img: "/images/testimonials/img-4.png",
-            location: "Kochi, India",
-        },
-        {
-            name: "Arjun Patel",
-            content:
-                "Outstanding fabric finish and color accuracy. Our clients noticed the difference immediately, and it added real value to our textile collections.",
-            img: "/images/testimonials/img-5.png",
-            location: "Ahmedabad, India",
-        },
-    ];
+
 
     return (
-        <Section className='bg-[#F3F4F6] md:pr-0'>
-            <Wrapper className='max-w-full'>
-                <div className='w-full grid grid-cols-1 lg:grid-cols-[450px_1fr] md:grid-cols-[380px_1fr] md-gap-0 gap-10'>
-                    <div className='w-full flex h-full flex-col gap-2 lg:gap-4 md:gap-3 md:items-start items-center'>
-                        <Heading className='md:text-left text-center'>
-                            Trusted by Buyers Worldwide
-                        </Heading>
-                        <SubHeading className='max-w-sm text-center md:text-left'>
-                            Consistent quality and reliable delivery — our long-term textile partner.
-                        </SubHeading>
-                        <ToolTip data={data} className='mt-8' />
+        <Section className='bg-cream overflow-hidden'>
+            <Wrapper >
+
+                <div className='grid lg:grid-cols-[430px_1fr] gap-14 items-center'>
+                    <div className='flex flex-col items-start'>
+
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-7 h-px bg-gold" />
+                            <span className="font-mono text-[10px] font-semibold tracking-[0.16em] uppercase text-gold">
+                                Testimonials
+                            </span>
+                            <div className="w-7 h-px bg-gold" />
+                        </div>
+
+                        <h2 className="font-play text-dark text-3xl lg:text-4xl font-medium leading-tight mb-2">
+                            Trusted by Buyers <em className='text-gold text-fun-blue-500'>Worldwide</em>
+                        </h2>
+
+                        <p className="text-sub text-sm max-w-sm leading-tight">
+                            Consistent quality and reliable delivery —
+                            our long-term textile partner.
+                        </p>
+
+                        <ToolTip data={data} className='mt-10' />
                     </div>
-                    <div className='w-full h-full overflow-hidden flex items-center'>
-                        <SliderWrapper options={OPTIONS} className='gap-5 py-5 h-full'>
-                            {
-                                testimonials.map((items,idx) => (
-                                    <Card
-                                        idx={idx}
-                                        key={items.name}
-                                        className={`relative rounded-3xl w-85 h-64 bg-white border border-gray-200 overflow-hidden shadow shadow-gray-300 p-6 flex flex-col gap-4 justify-between `}
-                                    >
-                                        <p className='text-base text-sub font-pop font-normal leading-tight'>
-                                            {items.content}
-                                        </p>
-                                        <div className='flex gap-3'>
-                                            <div className='size-12 shrink-0 overflow-hidden rounded-full p-0.5 bg-[#F3F4F6]'>
-                                                <Image src={items.img} width={100} height={100} alt={items.name} className='w-full h-full object-cover' />
-                                            </div>
-                                            <div className='flex-1'>
-                                                <span className='block text-lg font-mono text-dark font-medium'>
-                                                    {items.name}
-                                                </span>
-                                                <span className='block leading-tight text-sm font-pop font-normal text-sub'>
-                                                    {items.location}
-                                                </span>
-                                            </div>
+
+                    {/* Slider */}
+                    <div className='overflow-hidden'>
+
+                        <SliderWrapper options={OPTIONS} className='gap-6 py-4'>
+                            {testimonials.map((item, idx) => (
+                                <Card
+                                    key={item.name}
+                                    idx={idx}
+                                    className='relative w-88 md:w-[24rem] rounded-2xl overflow-hidden bg-white border border-black/5 p-7 shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(0,0,0,0.06)]'
+                                >
+
+                                    {/* Quote icon */}
+                                    <div className='absolute top-5 right-5 w-10 h-10 rounded-full bg-fun-blue-50 flex items-center justify-center'>
+                                        <Quote size={16} className='text-gold' />
+                                    </div>
+
+                                    {/* Content */}
+                                    <p className='text-[15px] leading-relaxed text-sub pr-6 mb-8'>
+                                        {item.content}
+                                    </p>
+
+                                    {/* User */}
+                                    <div className='flex items-center gap-4 mt-auto'>
+
+                                        <div className='size-14 rounded-full overflow-hidden ring-2 ring-fun-blue-100 shrink-0'>
+                                            <Image
+                                                src={item.img}
+                                                width={100}
+                                                height={100}
+                                                alt={item.name}
+                                                className='w-full h-full object-cover'
+                                            />
                                         </div>
-                                    </Card>
-                                ))
-                            }
+
+                                        <div>
+                                            <span className='block text-lg font-semibold text-dark leading-tight'>
+                                                {item.name}
+                                            </span>
+
+                                            <span className='block mt-1 text-sm text-[#7B8190]'>
+                                                {item.location}
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </Card>
+                            ))}
+
                         </SliderWrapper>
+
                     </div>
                 </div>
+
             </Wrapper>
         </Section>
     )
