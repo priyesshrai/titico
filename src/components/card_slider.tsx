@@ -29,7 +29,7 @@ export default function CardSlider() {
     const OPTIONS: EmblaOptionsType = { align: 'start', dragFree: true }
 
     return (
-        <Section className="bg-cream overflow-hidden py-16">
+        <Section className="bg-white overflow-hidden py-16">
 
             {/* ── Header ── */}
             <div className="flex flex-col items-center text-center px-6 mb-8">

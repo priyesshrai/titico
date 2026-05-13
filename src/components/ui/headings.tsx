@@ -32,7 +32,7 @@ export function PageHeading({ children, className, ...rest }: Props) {
 export function Heading({ children, className, ...rest }: Props1) {
     return (
         <h2
-            className={cn("md:font-bold font-semibold lg:text-4xl md:text-3xl text-2xl text-dark font-yeseva", className)}
+            className={cn("font-play text-dark text-3xl lg:text-4xl font-medium leading-tight mb-2", className)}
             {...rest}
         >
             {children}

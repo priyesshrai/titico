@@ -29,7 +29,7 @@ export default function SliderWrapper({ children, options, className }: PropType
             <button
                 onClick={onPrevButtonClick}
                 disabled={prevBtnDisabled}
-                className="absolute left-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-lg bg-dark text-white flex items-center justify-center hover:bg-black cursor-pointer disabled:bg-dark/40 disabled:cursor-not-allowed"
+                className="absolute left-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-lg bg-gold text-white flex items-center justify-center hover:bg-gold/90 cursor-pointer disabled:bg-gold/40 disabled:cursor-not-allowed"
             >
                 <MoveLeft size={13} />
             </button>
@@ -37,7 +37,7 @@ export default function SliderWrapper({ children, options, className }: PropType
             <button
                 onClick={onNextButtonClick}
                 disabled={nextBtnDisabled}
-                className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-lg bg-dark text-white flex items-center justify-center hover:bg-black cursor-pointer disabled:bg-dark/40 disabled:cursor-not-allowed"
+                className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-lg bg-gold text-white flex items-center justify-center hover:bg-gold/90 cursor-pointer disabled:bg-gold/40 disabled:cursor-not-allowed"
             >
                 <MoveRight size={13} />
             </button>
