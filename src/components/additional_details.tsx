@@ -43,10 +43,10 @@ export default function AdditionalDetails() {
                                 className='w-full h-full md:p-8 p-4 flex items-center justify-center flex-col'
                             >
                                 <Image src={item.icon} alt={item.label} width={56} height={56} className='lg:w-20 md:w-16 w-12 h-auto ' />
-                                <h4 className='text-lg md:text-xl font-pop font-medium text-dark mt-4'>
+                                <h4 className='text-lg md:text-xl  font-medium text-dark mt-4'>
                                     {item.label}
                                 </h4>
-                                <span className='text-sm font-pop text-center block mt-2 text-sub'>
+                                <span className='text-sm text-center block mt-2 text-sub'>
                                     {item.content}
                                 </span>
                             </AnimatedDiv>

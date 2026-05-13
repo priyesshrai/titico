@@ -1,151 +1,156 @@
 "use client";
 import Section from './ui/section'
 import Wrapper from './ui/wrapper'
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useRef, useState } from 'react'
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-    type CarouselApi
+    Carousel, CarouselContent, CarouselItem,
+    CarouselNext, CarouselPrevious, type CarouselApi
 } from "@/src/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay";
-import Button from './ui/buttons';
 import Image from 'next/image';
-
-interface Banner {
-    src: string;
-    alt: string;
-    title: string;
-    content: string;
-}
+import { banner } from '../constant/hero_banner';
 
 
 export default function Hero() {
     const [api, setApi] = useState<CarouselApi>()
     const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }))
-    const [activeIndex, setActiveIndex] = useState(0);
-
+    const [activeIndex, setActiveIndex] = useState(0)
 
     useEffect(() => {
-        if (!api) return;
+        if (!api) return
+        const onSelect = () => setActiveIndex(api.selectedScrollSnap())
+        api.on("select", onSelect)
+        onSelect()
+        return () => { api.off("select", onSelect) }
+    }, [api])
 
-        const onSelect = () => {
-            setActiveIndex(api.selectedScrollSnap());
-        };
+    const activeBanner = banner[activeIndex]
 
-        api.on("select", onSelect);
-        onSelect();
-
-        return () => {
-            api.off("select", onSelect);
-        };
-    }, [api]);
-
-    const banner: Banner[] = [
-        {
-            src: "/images/banner/banner-1.png",
-            alt: "Fabrics Woven through Generations",
-            title: "Fabrics Woven through Generations",
-            content: "Passed down through hands, not trends. Every weave carries the wisdom of years gone by.",
-        },
-        {
-            src: "/images/banner/banner-2.png",
-            alt: "Threads Of Living Heritage",
-            title: "Threads Of Living Heritage",
-            content: "Not preserved in museums, but lived every day. Our fabrics breathe tradition into the present.",
-        },
-        {
-            src: "/images/banner/banner-3.png",
-            alt: "Crafted In Timeless Silence",
-            title: "Crafted In Timeless Silence",
-            content: "Made slowly, away from noise and haste. Where patience, skill, and tradition quietly meet.",
-        },
-        {
-            src: "/images/banner/banner-4.png",
-            alt: "Handwoven. Historic. Honest.",
-            title: "Handwoven. Historic. Honest.",
-            content: "Woven by artisans who honour their craft. Rooted in heritage, untouched by shortcuts.",
-        },
-    ]
-    const activeBanner = banner[activeIndex];
     return (
-        <Section>
-            <Wrapper className='lg:py-6 md:py-6 sm:py-6 py-6'>
-                <div className='w-full relative grid grid-cols-1 lg:grid-cols-2 lg:gap-0 gap-10'>
-                    <div className='w-full h-full lg:order-1 order-2'>
-                        <motion.div
-                            key={activeIndex}
-                            initial={{ opacity: 0, x: -50, filter: "blur(24px)" }}
-                            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                            viewport={{
-                                once: false,
-                                amount: 0.4,
-                            }}
-                            transition={{
-                                duration: 0.6,
-                                ease: [0.22, 1, 0.36, 1],
-                                delay: 0.2
-                            }}
-                            className='w-full md:pr-10 flex flex-col justify-center h-full'>
-                            <span className='block lg:text-4xl md:text-3xl sm:text-2xl text-xl font-yeseva text-dark font-bold leading-tight max-w-lg'>
-                                {activeBanner.title}
+        <Section className='bg-[#f9f6f1]'>
+            <Wrapper className='lg:py-0 md:py-0 py-0'>
+                <div className='w-full grid grid-cols-1 lg:grid-cols-2 min-h-[88vh]'>
+
+                    {/* ── Left: Text ── */}
+                    <div className='flex flex-col justify-center lg:py-20 py-12 lg:pr-16 lg:pl-4 px-4 order-2 lg:order-1'>
+
+                        {/* Eyebrow */}
+                        <div className='flex items-center gap-3 mb-6'>
+                            <div className='w-7 h-px bg-[#c8a35a]' />
+                            <span className='font-mono text-[10px] font-semibold tracking-[0.14em] uppercase text-[#c8a35a]'>
+                                Varanasi · Est. 1978
                             </span>
-                            <span className='block mt-3 text-[#202020] font-normal font-play md:text-xl sm:text-base text-sm leading-tight max-w-sm'>
-                                {activeBanner.content}
-                            </span>
-                            <div className='md:mt-9 mt-4 flex flex-row items-center gap-4 md:pb-0 pb-5'>
-                                <Button>
-                                    Explore the Collections
-                                </Button>
-                                <Button variant='outline' className='hover:bg-transparent'>
-                                    Discover Our Legacy
-                                </Button>
-                            </div>
-                        </motion.div>
+                            <div className='w-7 h-px bg-[#c8a35a]' />
+                        </div>
+
+                        {/* Headline */}
+                        <AnimatePresence mode='wait'>
+                            <motion.div
+                                key={activeIndex}
+                                initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                exit={{ opacity: 0, y: -12, filter: 'blur(4px)' }}
+                                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                            >
+                                <h1 className='font-yeseva text-[#1c1a17] text-4xl lg:text-5xl leading-[1.15] mb-5 max-w-md'>
+                                    {activeBanner.title}
+                                </h1>
+                                <p className='font-pop font-light text-cont text-base lg:text-[17px] leading-relaxed max-w-sm mb-9'>
+                                    {activeBanner.content}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* CTAs */}
+                        <div className='flex items-center gap-3 mb-10'>
+                            <button className='font-mono text-[11px] font-semibold tracking-wide uppercase px-6 py-3.5 bg-[#1c1a17] text-[#f9f6f1] rounded hover:bg-[#2e2b26] transition-colors duration-200'>
+                                Explore Collections
+                            </button>
+                            <button className='font-mono text-[11px] font-semibold tracking-wide uppercase px-5 py-3.5 border border-[#1c1a17] text-[#1c1a17] rounded hover:bg-[#1c1a17] hover:text-[#f9f6f1] transition-all duration-200 flex items-center gap-2'>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" /></svg>
+                                Our Legacy
+                            </button>
+                        </div>
+
+                        {/* Stats */}
+                        <div className='flex items-center gap-6 pt-8 border-t border-[#e4ddd4]'>
+                            {[
+                                { val: '45+', lbl: 'Years in trade' },
+                                { val: '20+', lbl: 'Export countries' },
+                                { val: '500+', lbl: 'Fabric SKUs' },
+                            ].map((s, i) => (
+                                <div key={i} className='flex items-center gap-6'>
+                                    <div>
+                                        <div className='font-yeseva text-2xl text-[#1c1a17]'>{s.val}</div>
+                                        <div className='font-pop text-[10px] text-[#888] mt-0.5 tracking-wide'>{s.lbl}</div>
+                                    </div>
+                                    {i < 2 && <div className='w-px h-8 bg-[#e4ddd4]' />}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <Carousel className="w-full z-10 lg:order-2 order-1"
-                        plugins={[plugin.current]}
-                        opts={{
-                            loop: true,
-                        }}
-                        onMouseEnter={plugin.current.stop}
-                        onMouseLeave={plugin.current.reset}
-                        setApi={setApi}
-                    >
-                        <CarouselContent>
-                            {
-                                banner.map((data, key) => (
-                                    <CarouselItem key={key} className='relative'>
-                                        <Image
-                                            src={data.src}
-                                            alt="Banner"
-                                            className="w-full h-110 object-cover rounded-xl"
-                                            width={1080}
-                                            height={500}
-                                        />
+
+                    {/* ── Right: Carousel ── */}
+                    <div className='relative h-full order-1 lg:order-2 lg:py-10 py-6 lg:pl-6 '>
+                        <Carousel
+                            className='w-full lg:h-130 md:h-110 h-96'
+                            plugins={[plugin.current]}
+                            opts={{ loop: true }}
+                            onMouseEnter={plugin.current.stop}
+                            onMouseLeave={plugin.current.reset}
+                            setApi={setApi}
+                        >
+                            <CarouselContent className='h-full'>
+                                {banner.map((data, key) => (
+                                    <CarouselItem key={key} className='h-full'>
+                                        <div className='relative w-full h-full overflow-hidden rounded-2xl'>
+                                            <Image
+                                                src={data.src}
+                                                alt={data.alt}
+                                                fill
+                                                className='object-cover'
+                                                priority={key === 0}
+                                            />
+                                            {/* Slide counter overlay */}
+                                            <div className='absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-black/5'>
+                                                <div className='font-mono text-[9px] font-semibold tracking-widest uppercase text-[#888] mb-0.5'>Collection</div>
+                                                <div className='font-yeseva text-sm text-[#1c1a17]'>{data.alt.split(' ').slice(0, 2).join(' ')}</div>
+                                            </div>
+                                            {/* Slide number */}
+                                            <div className='absolute top-4 right-4 bg-white/80 rounded px-2.5 py-1'>
+                                                <span className='font-mono text-xs text-[#1c1a17] font-semibold'>
+                                                    {String(activeIndex + 1).padStart(2, '0')} / {String(banner.length).padStart(2, '0')}
+                                                </span>
+                                            </div>
+                                        </div>
                                     </CarouselItem>
-                                ))
-                            }
-                        </CarouselContent>
-                        <CarouselPrevious
-                            onClick={() => {
-                                api?.scrollPrev();
-                                plugin.current?.reset();
-                            }}
-                            className='border-none md:w-10 md:h-10 w-7 h-7 bg-dark text-white -left-5 text-3xl cursor-pointer hover:bg-zinc-800 rounded-lg'
-                        />
-                        <CarouselNext
-                            onClick={() => {
-                                api?.scrollNext();
-                                plugin.current?.reset();
-                            }}
-                            className='border-none md:w-10 md:h-10 w-7 h-7 bg-dark text-white text-3xl -right-5 cursor-pointer hover:bg-zinc-800 rounded-lg'
-                        />
-                    </Carousel>
+                                ))}
+                            </CarouselContent>
+
+                            {/* Custom nav */}
+                            <div className='absolute -bottom-5 right-4 flex items-center gap-2 z-10'>
+                                <CarouselPrevious
+                                    onClick={() => { api?.scrollPrev(); plugin.current?.reset() }}
+                                    className='static translate-y-0 w-9 h-9 bg-[#1c1a17] text-white border-none rounded hover:bg-[#c8a35a] hover:text-[#1c1a17] transition-colors duration-200'
+                                />
+                                {/* Dot indicators */}
+                                <div className='flex items-center gap-1.5 px-2'>
+                                    {banner.map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className={`h-0.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-5 bg-[#1c1a17]' : 'w-1.5 bg-[#ccc]'}`}
+                                        />
+                                    ))}
+                                </div>
+                                <CarouselNext
+                                    onClick={() => { api?.scrollNext(); plugin.current?.reset() }}
+                                    className='static translate-y-0 w-9 h-9 bg-[#1c1a17] text-white border-none rounded hover:bg-[#c8a35a] hover:text-[#1c1a17] transition-colors duration-200'
+                                />
+                            </div>
+                        </Carousel>
+                    </div>
+
                 </div>
             </Wrapper>
         </Section>

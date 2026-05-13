@@ -4,13 +4,14 @@
 @theme inline {
   --font-pop: var(--font-poppins);
   --font-mono: var(--font-montserrat);
-  --font-tan: var(--font-tan);
-  --font-dance: var(--font-dancing);
   --font-play: var(--font-play);
-  --font-yeseva: var(--font-yeseva);
-  --color-dark: #282828;
+
+  --color-dark: #1c1a17;
+  --color-gold: #c8a35a;
   --color-sub: #6e6e6e;
   --color-cont: #5b5b5b;
+  --color-cream: #f9f6f1;
+
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
@@ -38,6 +39,16 @@
 h1,
 h2,
 h3,
-h4 {
-  font-family: var(--font-yeseva) !important;
+h4,
+h5,
+h6,
+a {
+  font-family: var(--font-play);
+}
+button {
+  font-family: var(--font-montserrat);
+}
+p,
+span {
+  font-family: var(--font-pop);
 }
