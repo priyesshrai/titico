@@ -263,7 +263,7 @@ export default function LegacyPage() {
                                 <div className="w-7 h-px bg-gold" />
                             </div>
                             <h2 className="font-yeseva text-dark text-4xl lg:text-5xl leading-[1.15]">
-                                The same thread, <em className="text-gold not-italic">two centuries</em>
+                                The same quality, <em className="text-gold not-italic">for generations</em>
                             </h2>
                         </div>
                     </FadeUp>
@@ -271,14 +271,14 @@ export default function LegacyPage() {
                         {[
                             {
                                 img: "/images/banner/old.png",
-                                label: "Then · Pre 1990",
-                                caption: "Born in an age where craft was a way of life, our looms carried stories, not signatures.",
+                                label: "Then · Our Early Journey",
+                                caption: "Built on craftsmanship, dedication, and textile expertise, our foundation continues to inspire our work today.",
                                 tag: "Handloom · Village",
                             },
                             {
                                 img: "/images/banner/now.png",
-                                label: "2024 · Now",
-                                caption: "The same hands, the same discipline — creating fabrics for the present without leaving the past behind.",
+                                label: "Today · Modern Excellence",
+                                caption: "Combining experience with modern manufacturing support to deliver quality fabrics for global markets.",
                                 tag: "120 Looms · Global",
                             },
                         ].map((item, i) => (
