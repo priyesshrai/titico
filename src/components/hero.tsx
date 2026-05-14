@@ -28,7 +28,7 @@ export default function Hero() {
     const activeBanner = banner[activeIndex]
 
     return (
-        <Section className='bg-[#f9f6f1]'>
+        <Section className='bg-cream'>
             <Wrapper className='lg:py-0 md:py-0 py-0'>
                 <div className='w-full grid grid-cols-1 lg:grid-cols-2 min-h-[88vh]'>
 
@@ -37,11 +37,11 @@ export default function Hero() {
 
                         {/* Eyebrow */}
                         <div className='flex items-center gap-3 mb-6'>
-                            <div className='w-7 h-px bg-[#c8a35a]' />
-                            <span className='font-mono text-[10px] font-semibold tracking-[0.14em] uppercase text-[#c8a35a]'>
+                            <div className='w-7 h-px bg-gold' />
+                            <span className='font-mono text-[10px] font-semibold tracking-[0.14em] uppercase text-gold'>
                                 Varanasi · Est. 1978
                             </span>
-                            <div className='w-7 h-px bg-[#c8a35a]' />
+                            <div className='w-7 h-px bg-gold' />
                         </div>
 
                         {/* Headline */}
@@ -53,7 +53,7 @@ export default function Hero() {
                                 exit={{ opacity: 0, y: -12, filter: 'blur(4px)' }}
                                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                             >
-                                <h1 className='font-yeseva text-[#1c1a17] text-4xl lg:text-5xl leading-[1.15] mb-5 max-w-md'>
+                                <h1 className='font-yeseva text-dark text-4xl lg:text-5xl leading-[1.15] mb-5 max-w-md'>
                                     {activeBanner.title}
                                 </h1>
                                 <p className='font-pop font-light text-cont text-base lg:text-[17px] leading-relaxed max-w-sm mb-9'>
@@ -64,10 +64,10 @@ export default function Hero() {
 
                         {/* CTAs */}
                         <div className='flex items-center gap-3 mb-10'>
-                            <button className='font-mono text-[11px] font-semibold tracking-wide uppercase px-6 py-3.5 bg-[#1c1a17] text-[#f9f6f1] rounded hover:bg-[#2e2b26] transition-colors duration-200'>
+                            <button className='font-mono text-[11px] font-semibold tracking-wide uppercase px-6 py-3.5 bg-dark text-cream rounded hover:bg-[#2e2b26] transition-colors duration-200'>
                                 Explore Collections
                             </button>
-                            <button className='font-mono text-[11px] font-semibold tracking-wide uppercase px-5 py-3.5 border border-[#1c1a17] text-[#1c1a17] rounded hover:bg-[#1c1a17] hover:text-[#f9f6f1] transition-all duration-200 flex items-center gap-2'>
+                            <button className='font-mono text-[11px] font-semibold tracking-wide uppercase px-5 py-3.5 border border-dark text-dark rounded hover:bg-dark hover:text-cream transition-all duration-200 flex items-center gap-2'>
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" /></svg>
                                 Our Legacy
                             </button>
@@ -82,7 +82,7 @@ export default function Hero() {
                             ].map((s, i) => (
                                 <div key={i} className='flex items-center gap-6'>
                                     <div>
-                                        <div className='font-yeseva text-2xl text-[#1c1a17]'>{s.val}</div>
+                                        <div className='font-yeseva text-2xl text-dark'>{s.val}</div>
                                         <div className='font-pop text-[10px] text-[#888] mt-0.5 tracking-wide'>{s.lbl}</div>
                                     </div>
                                     {i < 2 && <div className='w-px h-8 bg-[#e4ddd4]' />}
@@ -115,11 +115,11 @@ export default function Hero() {
                                             {/* Slide counter overlay */}
                                             <div className='absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-black/5'>
                                                 <div className='font-mono text-[9px] font-semibold tracking-widest uppercase text-[#888] mb-0.5'>Collection</div>
-                                                <div className='font-yeseva text-sm text-[#1c1a17]'>{data.alt.split(' ').slice(0, 2).join(' ')}</div>
+                                                <div className='font-yeseva text-sm text-dark'>{data.alt.split(' ').slice(0, 2).join(' ')}</div>
                                             </div>
                                             {/* Slide number */}
                                             <div className='absolute top-4 right-4 bg-white/80 rounded px-2.5 py-1'>
-                                                <span className='font-mono text-xs text-[#1c1a17] font-semibold'>
+                                                <span className='font-mono text-xs text-dark font-semibold'>
                                                     {String(activeIndex + 1).padStart(2, '0')} / {String(banner.length).padStart(2, '0')}
                                                 </span>
                                             </div>
@@ -132,20 +132,20 @@ export default function Hero() {
                             <div className='absolute -bottom-5 right-4 flex items-center gap-2 z-10'>
                                 <CarouselPrevious
                                     onClick={() => { api?.scrollPrev(); plugin.current?.reset() }}
-                                    className='static translate-y-0 w-9 h-9 bg-[#1c1a17] text-white border-none rounded hover:bg-[#c8a35a] hover:text-[#1c1a17] transition-colors duration-200'
+                                    className='static translate-y-0 w-9 h-9 bg-dark text-white border-none rounded hover:bg-gold hover:text-dark transition-colors duration-200'
                                 />
                                 {/* Dot indicators */}
                                 <div className='flex items-center gap-1.5 px-2'>
                                     {banner.map((_, i) => (
                                         <div
                                             key={i}
-                                            className={`h-0.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-5 bg-[#1c1a17]' : 'w-1.5 bg-[#ccc]'}`}
+                                            className={`h-0.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-5 bg-dark' : 'w-1.5 bg-[#ccc]'}`}
                                         />
                                     ))}
                                 </div>
                                 <CarouselNext
                                     onClick={() => { api?.scrollNext(); plugin.current?.reset() }}
-                                    className='static translate-y-0 w-9 h-9 bg-[#1c1a17] text-white border-none rounded hover:bg-[#c8a35a] hover:text-[#1c1a17] transition-colors duration-200'
+                                    className='static translate-y-0 w-9 h-9 bg-dark text-white border-none rounded hover:bg-gold hover:text-dark transition-colors duration-200'
                                 />
                             </div>
                         </Carousel>
