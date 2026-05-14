@@ -9,27 +9,30 @@ import Wrapper from "./ui/wrapper";
 const ads = [
     {
         eyebrow: "Limited offer · Ends soon",
-        title: "Flat 30% off signature fabrics",
-        desc: "Our most loved textures and patterns — available at special seasonal prices while stock lasts.",
-        image: "/images/ads/img-1.png",
+        title: "Refined Texture Series",
+        desc: "Discover carefully woven fabrics featuring rich textures, layered patterns, and timeless finishes developed for upholstery, interiors, and premium textile applications.",
+        image: "/images/ads/img-1.jpeg",
         bg: "#2e2010",
         flip: false,
+        ctaName:"View Collection"
     },
     {
         eyebrow: "New arrivals · Season 2026",
-        title: "Fresh weaves, modern finishes",
-        desc: "Designed for today's global fashion trends — contemporary patterns built on traditional craft.",
-        image: "/images/ads/img-2.png",
+        title: "Contemporary Weaves",
+        desc: "Modern fabric compositions inspired by global design trends, combining elegant detailing with versatile usage across fashion and furnishing industries.",
+        image: "/images/ads/img-2.jpeg",
         bg: "#1a1208",
         flip: true,
+        ctaName:"Explore Designs"
     },
     {
         eyebrow: "Premium range · Export grade",
-        title: "Premium fabric collection",
-        desc: "Handpicked materials crafted for durability, comfort, and long-lasting beauty — built for international buyers.",
-        image: "/images/ads/img-3.png",
+        title: "Heritage Craft Collection",
+        desc: "A thoughtfully developed range of fabrics blending traditional weaving aesthetics with modern production standards for long-lasting visual appeal.",
+        image: "/images/ads/img-3.jpeg",
         bg: "#0d1a15",
         flip: false,
+        ctaName:"See Fabrics"
     },
 ];
 
@@ -87,7 +90,7 @@ export default function Ads() {
                                     href="/#"
                                     className="inline-flex items-center gap-2 w-fit font-mono text-[10px] font-bold tracking-[.12em] uppercase text-dark bg-gold px-5 py-2.5 rounded-md hover:opacity-85 transition-opacity duration-200 mt-1"
                                 >
-                                    Shop now <ArrowRight size={12} />
+                                    {ad.ctaName} <ArrowRight size={12} />
                                 </Link>
                             </div>
                         </motion.div>
