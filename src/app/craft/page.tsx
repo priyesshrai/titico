@@ -56,23 +56,23 @@ function ParallaxHero() {
                         <div className="flex items-center gap-3 mb-5">
                             <div className="w-7 h-px bg-gold" />
                             <span className="font-mono text-[10px] font-semibold tracking-[0.14em] uppercase text-gold">
-                                Varanasi · 120 Looms · 300+ Artisans
+                                Premium Fabric Manufacturing
                             </span>
                             <div className="w-7 h-px bg-gold" />
                         </div>
                         <h1 className="font-yeseva text-cream text-5xl lg:text-[5.5rem] leading-[1.05] mb-6 max-w-4xl">
-                            Skill passed<br />
-                            <em className="text-gold not-italic">hand to hand</em>
+                            Crafted with<br />
+                            <em className="text-gold not-italic">quality and precision</em>
                         </h1>
                         <p className="font-pop font-light text-[#c8bfb0] text-lg leading-relaxed max-w-xl">
-                            Six precision stages. Every metre accountable. From the first twist of yarn to the last fold before export — this is how Titico fabric is made.
+                            From sourcing premium yarns to delivering finished fabrics, every stage of our process focuses on quality, consistency, and refined craftsmanship for Home & Fashion industries.
                         </p>
                     </motion.div>
                 </div>
             </div>
 
             {/* Decorative numeral watermark */}
-            <div className="absolute right-8 bottom-16 font-yeseva text-[20rem] text-white/5 leading-none select-none hidden lg:block pointer-events-none">
+            <div className="absolute right-8 bottom-16 font-yeseva text-[20rem] text-white/10 leading-none select-none hidden lg:block pointer-events-none">
                 120
             </div>
 
@@ -133,7 +133,7 @@ export default function CraftPage() {
                                 <div className="text-center">
                                     <div className="font-yeseva text-gold text-3xl">{s.val}</div>
                                     <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-gold/70 mt-0.5">{s.unit}</div>
-                                    <div className="font-pop text-[10px] text-dark/60 mt-1 leading-tight">{s.desc}</div>
+                                    {/* <div className="font-pop text-[10px] text-gold/60 mt-1 leading-tight">{s.desc}</div> */}
                                 </div>
                             </FadeUp>
                         ))}
@@ -153,7 +153,7 @@ export default function CraftPage() {
                                 </span>
                             </div>
                             <h2 className="font-yeseva text-dark text-4xl lg:text-5xl leading-[1.15]">
-                                From fibre to <em className="text-gold not-italic">finished fabric</em>
+                                From yarn to <em className="text-gold not-italic">finished fabric</em>
                             </h2>
                         </div>
                     </FadeUp>
@@ -178,7 +178,9 @@ export default function CraftPage() {
                                                 <div className={`font-mono text-[10px] font-bold tracking-widest uppercase shrink-0 ${isOpen ? "text-gold" : "text-[#aaa]"}`}>
                                                     {step.number}
                                                 </div>
-                                                <div className="text-xl">{step.icon}</div>
+                                                <div className={isOpen ? "text-gold":"text-dark"}>
+                                                    {<step.icon size={20} strokeWidth={1} />}
+                                                </div>
                                                 <div className="flex-1">
                                                     <div className={`font-mono text-[9px] uppercase tracking-widest mb-0.5 ${isOpen ? "text-gold/70" : "text-[#bbb]"}`}>
                                                         {step.phase}
@@ -315,22 +317,20 @@ export default function CraftPage() {
                                 <div className="flex items-center gap-3 mb-5">
                                     <div className="w-7 h-px bg-gold" />
                                     <span className="font-mono text-[10px] font-semibold tracking-[0.14em] uppercase text-gold">
-                                        Our People
+                                        Our Expertise
                                     </span>
                                 </div>
                                 <h2 className="font-yeseva text-cream text-4xl lg:text-5xl leading-[1.15] mb-6">
-                                    The artisan is <em className="text-gold not-italic">irreplaceable</em>
+                                    Quality remains at the <em className="text-gold not-italic">heart of every fabric</em>
                                 </h2>
                                 <p className="font-pop font-light text-[#b0a898] text-[17px] leading-relaxed mb-5">
-                                    Machines extend reach. Artisans define quality. At Titico, our 300+ weavers, dyers, and finishers are not just workers — they are inheritors of a craft tradition that stretches back centuries in Varanasi.
+                                    Our manufacturing process combines experience, skilled workmanship, and quality-focused production to create fabrics that meet modern market requirements. Every fabric category is developed with attention to texture, durability, and finishing standards.
                                 </p>
-                                <p className="font-pop font-light text-[#b0a898] text-[17px] leading-relaxed mb-8">
-                                    We pay above market rates, offer year-round employment, and maintain a healthcare scheme for all production staff. Skilled artisans stay. Families send their children to work with us. That continuity is our most important quality input.
-                                </p>
-                                <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 pt-6 border-t border-white/10">
                                     {[
-                                        { val: "300+", lbl: "Artisans employed" },
-                                        { val: "40+", lbl: "Years avg. family relationship" },
+                                        { val: "Premium", lbl: "Fabric Collection" },
+                                        { val: "Quality", lbl: "Manufacturing Support" },
+                                        { val: "Global", lbl: "Supply Capability" },
                                     ].map((s) => (
                                         <div key={s.lbl}>
                                             <div className="font-yeseva text-2xl text-gold">{s.val}</div>

@@ -1,69 +1,111 @@
-/* ─── Process Steps ─── */
+import {
+    PackageCheck,
+    PenTool,
+    Factory,
+    Droplets,
+    ShieldCheck,
+    Truck,
+} from "lucide-react";
+
 export const steps = [
     {
         number: "01",
-        phase: "Raw Input",
-        icon: "🧵",
-        title: "Yarn Sourcing",
-        body: "Long-staple cotton, viscose, silk, and blended yarns are sourced exclusively from certified mills. Every lot is tested for tenacity, twist per inch, and moisture content before entering the facility. We maintain relationships with the same five spinning mills we have used since 2001.",
-        tags: ["Long-staple cotton", "Lot certified", "Moisture tested"],
-        detail: "We reject approximately 8% of incoming yarn on quality grounds. That number tells you everything about the finished fabric.",
+        phase: "Raw Material",
+        icon: PackageCheck,
+        title: "Yarn Selection",
+        body: "Premium-quality yarns are carefully selected based on texture, strength, softness, and fabric performance. The right yarn foundation ensures consistency across Silk, Cotton, Linen, Ikat, Silk-Cotton, Tweed, and Herringbone fabric collections.",
+        tags: [
+            "Premium Yarns",
+            "Texture Check",
+            "Quality Selection"
+        ],
+        detail:
+            "Careful yarn selection plays a key role in achieving fabric durability, finish consistency, and overall weaving quality.",
     },
+
     {
         number: "02",
         phase: "Preparation",
-        icon: "⚙️",
-        title: "Warping",
-        body: "Thousands of ends are wound in perfect parallel tension — this determines the uniformity of the eventual weave. We use both sectional and beam warping, with 100% per-beam tension monitoring. Inconsistent tension is the single biggest source of quality failure in weaving; our monitoring eliminates it.",
-        tags: ["Beam warping", "Tension monitor", "Reed count verification"],
-        detail: "A single warp beam for a 120cm-wide fabric may carry over 4,000 individual ends — each at identical tension.",
+        icon: PenTool,
+        title: "Fabric Development",
+        body: "Our team works on fabric structure, weave patterns, and construction details to create fabrics suitable for Home & Fashion applications. Every development stage focuses on balancing texture, appearance, and functionality.",
+        tags: [
+            "Weave Planning",
+            "Pattern Development",
+            "Fabric Structure"
+        ],
+        detail:
+            "Every fabric design is developed with attention to texture, finish, and long-term usability.",
     },
+
     {
         number: "03",
         phase: "Production",
-        icon: "🪢",
+        icon: Factory,
         title: "Weaving",
-        body: "Our 120-loom floor runs Jacquard, rapier, and dobby constructions simultaneously. Real-time pick density and stop-motion monitoring ensure that no defect passes the loom undetected. Traditional pit looms operate alongside power looms — handwoven cloth for heritage orders, power-woven for commercial export.",
-        tags: ["Jacquard", "Rapier looms", "120 active looms", "Pit looms"],
-        detail: "Our Jacquard looms can execute patterns of up to 10,000 hooks — enabling the intricate brocade work Varanasi is known for.",
+        body: "The weaving stage combines skilled workmanship with modern manufacturing support to maintain fabric consistency and precise detailing. Each weave is monitored carefully to ensure quality across different fabric styles.",
+        tags: [
+            "Precision Weaving",
+            "Consistent Quality",
+            "Production Control"
+        ],
+        detail:
+            "Strong weave construction helps maintain fabric durability, appearance, and production consistency.",
     },
+
     {
         number: "04",
         phase: "Treatment",
-        icon: "💧",
+        icon: Droplets,
         title: "Dyeing & Finishing",
-        body: "Yarn dyeing precedes weaving for our Ikat range; piece dyeing follows weaving for most other constructions. We use reactive dyes for cotton and acid dyes for silk — both REACH-compliant and tested for fastness against ISO standards. Finishing includes mercerising, calendering, and sanforising as required.",
-        tags: ["Reactive dyes", "Acid dyes", "REACH-compliant", "ISO fastness"],
-        detail: "Colour fastness to washing is tested at grades 4–5 on the ISO scale before any fabric leaves our finishing unit.",
+        body: "Fabrics undergo dyeing and finishing processes to achieve the required softness, texture, color appearance, and final presentation. Special attention is given to maintaining fabric quality throughout the process.",
+        tags: [
+            "Color Processing",
+            "Soft Finish",
+            "Texture Enhancement"
+        ],
+        detail:
+            "Finishing techniques enhance the overall fabric feel, presentation, and market-ready quality.",
     },
+
     {
         number: "05",
         phase: "Inspection",
-        icon: "🔍",
+        icon: ShieldCheck,
         title: "Quality Control",
-        body: "Every piece is inspected under standard D65 lighting against a 4-point grading system. Defect density per 100 linear metres determines grade — A-grade is our only export grade. Our QC team of twelve inspectors works independently of the production floor and reports directly to management.",
-        tags: ["4-point system", "D65 lighting", "12 QC inspectors", "A-grade only"],
-        detail: "We use the American 4-point system: a penalty point for each defect, with the piece graded by total penalty per 100 yards.",
+        body: "Every fabric batch passes through quality checks for weaving accuracy, texture consistency, finishing standards, and overall product reliability before dispatch.",
+        tags: [
+            "Fabric Inspection",
+            "Quality Standards",
+            "Consistency Check"
+        ],
+        detail:
+            "Multiple quality inspections help maintain dependable production standards for every order.",
     },
+
     {
         number: "06",
         phase: "Dispatch",
-        icon: "📦",
-        title: "Packing & Export",
-        body: "Fabric is rolled on PVC cores, wrapped in acid-free tissue, and packed in moisture-resistant polyethylene bags before cartonning. Documentation — including mill test reports, country-of-origin certificates, and composition declarations — is prepared to destination-country import requirements.",
-        tags: ["Acid-free packing", "Mill test reports", "COO certificates"],
-        detail: "We have dispatched to 20+ countries. Every carton carries a unique lot code that traces back to the original warp beam.",
+        icon: Truck,
+        title: "Packing & Delivery",
+        body: "Finished fabrics are securely packed and prepared for smooth domestic and international deliveries while maintaining product safety during transportation.",
+        tags: [
+            "Secure Packing",
+            "Export Ready",
+            "Timely Dispatch"
+        ],
+        detail:
+            "Proper packaging and dispatch management ensure fabrics reach clients in excellent condition.",
     },
 ];
-
 /* ─── Stats ─── */
 export const stats = [
-    { val: "120", unit: "Looms", desc: "Jacquard, rapier, dobby & pit" },
-    { val: "300+", unit: "Artisans", desc: "Weavers, dyers, QC staff" },
-    { val: "12,000", unit: "Sq ft", desc: "Manufacturing floor area" },
-    { val: "8%", unit: "Rejection", desc: "Incoming yarn refused on quality" },
-    { val: "4–5", unit: "ISO grade", desc: "Colour fastness target" },
-    { val: "7–10", unit: "Days", desc: "Sample development turnaround" },
+    { val: "100+", unit: "Fabric Variations", desc: "Jacquard, rapier, dobby & pit" },
+    { val: "Global", unit: "Export Reach", desc: "Weavers, dyers, QC staff" },
+    { val: "Premium", unit: "Quality Standards", desc: "Manufacturing floor area" },
+    { val: "Trusted", unit: "Manufacturing Support", desc: "Incoming yarn refused on quality" },
+    { val: "Multiple", unit: "Fabric Categories", desc: "Colour fastness target" },
+    { val: "Reliable", unit: "Delivery Commitment", desc: "Sample development turnaround" },
 ];
 
 /* ─── Materials ─── */
