@@ -1,6 +1,6 @@
 "use client";
-import { motion, useInView } from "motion/react";
-import { useRef, useState } from 'react';
+import { motion } from "motion/react";
+import { useState } from 'react';
 import Image from 'next/image';
 import Section from "@/src/components/ui/section";
 import Wrapper from "@/src/components/ui/wrapper";

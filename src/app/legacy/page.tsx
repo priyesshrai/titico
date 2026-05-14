@@ -1,26 +1,9 @@
 "use client";
-import { motion, useInView } from "motion/react";
-import { useRef } from 'react';
 import Image from 'next/image';
 import Section from "@/src/components/ui/section";
 import Wrapper from "@/src/components/ui/wrapper";
 import { pillars, timeline } from "@/src/constant/legacy";
-
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-80px" });
-    return (
-        <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 32 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
-            className={className}
-        >
-            {children}
-        </motion.div>
-    );
-}
+import { FadeUp } from "@/src/lib/fade_up";
 
 export default function LegacyPage() {
     return (
