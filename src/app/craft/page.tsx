@@ -7,13 +7,6 @@ import Wrapper from "@/src/components/ui/wrapper";
 import { FadeUp } from "@/src/lib/fade_up";
 import { stats, materials, steps } from "@/src/constant/craft";
 
-/* ─────────────────────────────────────────────
-   PARALLAX HERO
-   • Uses an image right now.
-   • Video is commented out — swap once editing is done:
-       1. Delete the <Image … /> block
-       2. Uncomment the <video … /> block
-   ───────────────────────────────────────────── */
 function ParallaxHero() {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -103,10 +96,6 @@ function ParallaxHero() {
     );
 }
 
-/* ─────────────────────────────────────────────
-   PARALLAX IMAGE BAND
-   Used as a visual breather between sections
-   ───────────────────────────────────────────── */
 function ParallaxBand({ src, alt }: { src: string; alt: string }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
