@@ -31,6 +31,7 @@ export default function SliderWrapper({ children, options, className }: PropType
                 disabled={prevBtnDisabled}
                 className="absolute left-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-lg bg-gold text-white flex items-center justify-center hover:bg-gold/90 cursor-pointer disabled:bg-gold/40 disabled:cursor-not-allowed"
             >
+                <span className="sr-only">Previous</span>
                 <MoveLeft size={13} />
             </button>
 
@@ -39,6 +40,7 @@ export default function SliderWrapper({ children, options, className }: PropType
                 disabled={nextBtnDisabled}
                 className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-lg bg-gold text-white flex items-center justify-center hover:bg-gold/90 cursor-pointer disabled:bg-gold/40 disabled:cursor-not-allowed"
             >
+                <span className="sr-only">Next</span>
                 <MoveRight size={13} />
             </button>
         </section>
