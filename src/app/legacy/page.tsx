@@ -108,7 +108,7 @@ function ParallaxBand({ src, alt }: { src: string; alt: string }) {
     return (
         <div ref={ref} className="relative w-full h-[40vh] overflow-hidden">
             <motion.div style={{ y }} className="absolute inset-0 scale-125">
-                <Image src={src} alt={alt} fill className="object-cover" />
+                <Image src={src} alt={alt} fill className="object-cover saturate-0" />
             </motion.div>
             <div className="absolute inset-0 bg-dark/50" />
         </div>

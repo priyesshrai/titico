@@ -230,7 +230,7 @@ export default function CraftPage() {
                             <FadeUp>
                                 <div className="relative aspect-3/4 rounded-2xl overflow-hidden">
                                     <Image
-                                        src="/images/banner/banner-2.png"
+                                        src="/images/craft/yarn.png"
                                         alt="Weaving at Titico Textiles factory"
                                         fill
                                         className="object-cover"
@@ -251,7 +251,7 @@ export default function CraftPage() {
 
             {/* ── 4. PARALLAX BAND (between process and materials) ── */}
             <ParallaxBand
-                src="/images/banner/banner-1.png"
+                src="/images/craft/banner.png"
                 alt="Titico loom hall — yarn winding process"
             />
 
@@ -310,7 +310,7 @@ export default function CraftPage() {
                     <FadeUp>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                             <div className="relative aspect-4/3 rounded-2xl overflow-hidden">
-                                <Image src="/images/banner/banner-2.png" alt="Artisan at Titico" fill className="object-cover" />
+                                <Image src="/images/craft/qulity.png" alt="Artisan at Titico" fill className="object-cover" />
                                 <div className="absolute inset-0 bg-linear-to-br from-dark/40 to-transparent" />
                             </div>
                             <div>
