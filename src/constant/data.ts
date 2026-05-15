@@ -4,7 +4,7 @@ export const stages = [
         phase: "Raw Material",
         title: "The Yarn Arrives",
         subtitle: "Where quality is decided before a single thread is woven",
-        img: "/images/fabric/silk.jpeg",
+        img: "/images/manufacturing/img-1.png",
         imgAlt: "Raw silk and cotton yarn spools at Titico warehouse",
         body: `Every fabric's quality ceiling is set the moment yarn enters our gates. We source long-staple cotton from certified mills in Gujarat and Maharashtra, pure silk from Varanasi sericulture cooperatives, and linen from European suppliers processed locally for climate adaptation.
 
@@ -22,7 +22,7 @@ Each incoming lot undergoes a mandatory 48-hour hold. During this time our in-ho
         phase: "Preparation",
         title: "Warping the Loom",
         subtitle: "Four thousand threads, one perfect tension",
-        img: "/images/banner/banner-2.png",
+        img: "/images/manufacturing/img-1.png",
         imgAlt: "Warp beam preparation at Titico loom hall",
         body: `Warping is the invisible foundation of every fabric. A single beam for a 120cm-wide cloth may carry over 4,000 individual thread ends — and every one of them must sit at precisely the same tension or the finished weave will show inconsistency that no finishing process can correct.
 
@@ -58,7 +58,7 @@ Real-time pick density monitoring and electronic stop-motion systems halt produc
         phase: "Dyeing",
         title: "Colour from the Ground Up",
         subtitle: "REACH-compliant, ISO-tested, honest to the yarn",
-        img: "/images/fabric/ikat.jpeg",
+        img: "/images/manufacturing/img-2.png",
         imgAlt: "Yarn dyeing unit at Titico — reactive and acid dye processes",
         body: `We dye before weaving for our Ikat range (resist-dyeing the warp yarn before it reaches the loom) and after weaving for most other constructions. Reactive dyes are used for cellulosic fibres — cotton and linen; acid dyes for protein fibres — silk and wool blends. All dyes are REACH-compliant and OEKO-TEX certified.
 
@@ -94,7 +94,7 @@ Each finishing recipe is matched to the fabric construction and the end-use requ
         phase: "Quality Control",
         title: "Nothing Leaves Unchecked",
         subtitle: "Twelve inspectors, one grade: A",
-        img: "/images/fabric/herring.jpeg",
+        img: "/images/manufacturing/img-3.png",
         imgAlt: "Quality control inspection under D65 standardised lighting at Titico",
         body: `Our QC team of twelve inspectors works entirely independently of the production floor — they report directly to management and have authority to hold any lot without approval. Every piece of fabric is inspected under standardised D65 daylight-equivalent lighting against the American 4-point system: penalty points are assigned for each defect, and the total penalty per 100 linear yards determines the grade.
 
@@ -165,6 +165,7 @@ export const looms = [
         desc: "Up to 10,000-hook capacity. Used for the intricate brocade patterns — Banarasi bootis, floral jaal, kimkhwab gold-thread work — that Varanasi is known for worldwide.",
         best: "Brocade · Buti · Kimkhwab",
         icon: "⟁",
+        image:"/images/manufacturing/20.png"
     },
     {
         name: "Rapier",
@@ -172,6 +173,7 @@ export const looms = [
         desc: "High-speed, versatile insertion mechanism. Handles everything from fine cotton muslin to medium-weight linen blends. Our highest-volume loom for commercial export orders.",
         best: "Cotton · Linen · Tweed",
         icon: "⟶",
+        image:"/images/manufacturing/21.png"
     },
     {
         name: "Dobby",
@@ -179,6 +181,7 @@ export const looms = [
         desc: "Controlled shedding for geometric patterns — herringbone, houndstooth, small-repeat textures. Popular for suiting and upholstery constructions.",
         best: "Herringbone · Dobby texture · Suiting",
         icon: "⊞",
+        image:"/images/manufacturing/22.png"
     },
     {
         name: "Pit Loom",
@@ -186,5 +189,6 @@ export const looms = [
         desc: "Traditional handlooms recessed into the floor — the original Banarasi weaving method. Operated by our most experienced weavers for heritage and collector orders. Irreplaceable for certain silk constructions.",
         best: "Heritage silk · Handwoven brocade · Collector pieces",
         icon: "⌇",
+        image:"/images/manufacturing/23.png"
     },
 ];

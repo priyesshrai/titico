@@ -170,7 +170,7 @@ export default function CollectionsPage() {
                                 </button>
                             </div>
                             <div className="relative h-80 lg:h-auto lg:aspect-square rounded-2xl overflow-hidden">
-                                <Image src="/images/banner/banner-1.png" alt="Fabric sampling at Titico" fill className="object-cover" />
+                                <Image src="/images/collections/collections.png" alt="Fabric sampling at Titico" fill className="object-cover" />
                                 <div className="absolute inset-0 bg-linear-to-br from-dark/30 to-transparent" />
                             </div>
                         </div>

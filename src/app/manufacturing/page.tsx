@@ -166,7 +166,7 @@ function ProcessStage({ stage, index }: { stage: typeof stages[0]; index: number
                                     src={stage.img}
                                     alt={stage.imgAlt}
                                     fill
-                                    className="object-cover hover:scale-105 transition-transform duration-1000"
+                                    className="object-cover hover:scale-105 transition-transform duration-1000 saturate-0"
                                 />
                                 {/* Stage watermark */}
                                 <div className="absolute top-4 left-4">
@@ -263,7 +263,7 @@ function LoomTypes() {
                             {/* Visual block */}
                             <div className="mt-6 relative aspect-video rounded-xl overflow-hidden">
                                 <Image
-                                    src="/images/banner/banner-2.png"
+                                    src={loom.image}
                                     alt={`${loom.name} loom at Titico`}
                                     fill
                                     className="object-cover"
