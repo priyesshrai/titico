@@ -137,6 +137,7 @@ export default function Footer() {
                                         className='w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-gold hover:border-gold transition-all duration-300'
                                     >
                                         <Instagram size={15} />
+                                        <span className='sr-only'>Instagram</span>
                                     </Link>
 
                                     <Link
@@ -144,6 +145,7 @@ export default function Footer() {
                                         className='w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-gold hover:border-gold transition-all duration-300'
                                     >
                                         <Facebook size={15} />
+                                        <span className='sr-only'>Facebook</span>
                                     </Link>
 
                                     <Link
@@ -151,6 +153,7 @@ export default function Footer() {
                                         className='w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-gold hover:border-gold transition-all duration-300'
                                     >
                                         <Twitter size={15} />
+                                        <span className='sr-only'>Teitter</span>
                                     </Link>
 
                                     <Link
@@ -158,6 +161,7 @@ export default function Footer() {
                                         className='w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-gold hover:border-gold transition-all duration-300'
                                     >
                                         <Linkedin size={15} />
+                                        <span className='sr-only'>LinkedIn</span>
                                     </Link>
                                 </div>
                             </div>

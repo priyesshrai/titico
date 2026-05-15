@@ -111,6 +111,7 @@ export default function Hero() {
                                                 fill
                                                 className='object-cover'
                                                 priority={key === 0}
+                                                fetchPriority={key === 0 ? "high" : "auto"}
                                             />
                                             {/* Slide counter overlay */}
                                             <div className='absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-black/5'>
